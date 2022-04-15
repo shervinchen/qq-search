@@ -2,6 +2,7 @@
   "name": "qq-search",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shervinchen.github.io/qq-search",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.1",
