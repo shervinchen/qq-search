@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qq-search/static/css/main.dac34cc6.css",
+    "main.js": "/qq-search/static/js/main.e1573ec0.js",
+    "static/js/787.2f360039.chunk.js": "/qq-search/static/js/787.2f360039.chunk.js",
+    "index.html": "/qq-search/index.html",
+    "main.dac34cc6.css.map": "/qq-search/static/css/main.dac34cc6.css.map",
+    "main.e1573ec0.js.map": "/qq-search/static/js/main.e1573ec0.js.map",
+    "787.2f360039.chunk.js.map": "/qq-search/static/js/787.2f360039.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dac34cc6.css",
+    "static/js/main.e1573ec0.js"
+  ]
+}
