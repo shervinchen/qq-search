@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Info from './Info';
+import Info from './components/Info';
 
 function App() {
   const [searchText, setSearchText] = useState('');

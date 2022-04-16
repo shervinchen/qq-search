@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDebounce, useInfos } from './hooks';
+import { useDebounce, useInfos } from '../hooks';
 
 const Info = ({ text = '' }: { text?: string }) => {
   // text changes trigger search, so we need to debounce the text

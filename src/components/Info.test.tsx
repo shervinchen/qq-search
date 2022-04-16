@@ -1,7 +1,7 @@
 /* eslint-disable testing-library/prefer-screen-queries */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { useInfos } from './hooks';
+import { useInfos } from '../hooks';
 import Info from './Info';
 
 const mockedUseInfos = useInfos as jest.Mock<any>;
