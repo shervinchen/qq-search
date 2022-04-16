@@ -1,31 +1,8 @@
 import React, { useState } from 'react';
-import { useQuery } from 'react-query';
-
-import API from './utils/request';
-import { useDebounce } from './hooks';
-import { QQInfo } from './types';
+import Info from './Info';
 
 function App() {
   const [searchText, setSearchText] = useState('');
-
-  const debouncedSearchText = useDebounce<string>(searchText, 500);
-
-  const { isFetching, isError, error, data } = useQuery<
-    Promise<QQInfo>,
-    Error,
-    QQInfo
-  >(
-    [
-      'getQQInfo',
-      {
-        debouncedSearchText,
-      },
-    ],
-    () =>
-      API.get(`/api/qq.info?qq=${debouncedSearchText}`).then(
-        (response) => response.data
-      )
-  );
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -46,27 +23,7 @@ function App() {
           onChange={handleSearch}
         />
       </div>
-      {isFetching ? (
-        <div>Loading...</div>
-      ) : isError ? (
-        <div>Error: {error.message}</div>
-      ) : data?.code === 1 ? (
-        <div>
-          <div className="flex items-center border-2 rounded-2xl border-black p-2">
-            <img
-              src={data?.qlogo}
-              alt="qq avatar"
-              className="w-[80px] h-[80px] border-none overflow-hidden rounded-full mr-4 bg-[#000]"
-            />
-            <div>
-              <div className="text-xl mb-2">{data?.name}</div>
-              <div className="text-xl text-gray-400">{data?.qq}</div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div>{data?.msg}</div>
-      )}
+      <Info text={searchText} />
     </div>
   );
 }
