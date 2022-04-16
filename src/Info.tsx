@@ -12,7 +12,9 @@ const Info = ({ text = '' }: { text?: string }) => {
         <div>fetching data...</div>
       ) : isError ? (
         <div>{error.message}</div>
-      ) : data?.code === 1 ? (
+      ) : data?.code !== 1 ? (
+        <div>{data?.msg}</div>
+      ) : (
         <div>
           <div className="flex items-center border-2 rounded-2xl border-black p-2">
             <img
@@ -26,8 +28,6 @@ const Info = ({ text = '' }: { text?: string }) => {
             </div>
           </div>
         </div>
-      ) : (
-        <div>{data?.msg}</div>
       )}
     </>
   );
